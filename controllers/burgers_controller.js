@@ -1,10 +1,20 @@
 const express = require('express');
-const app = express();
+const router = express.Router();
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+router.get('/', function(req,res) {
+  res.render('index');
+})
 
-const exphbs = require('express-handlebars');
+// router.get('/add', function(req,res) {
+//   app.
+// });
+// Leaving a switch statment here for use later.
+// switch (expression) {
+//   case expression:
+//
+//     break;
+//   default:
+//
+// }
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+module.exports = router;
